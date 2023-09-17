@@ -3,7 +3,6 @@ import {useNavigate} from "react-router-dom";
 import {Auth} from "@supabase/auth-ui-react";
 import {ThemeSupa,} from '@supabase/auth-ui-shared'
 
-
 const supabase = createClient(
     process.env.REACT_APP_SUPABASE_CLIENT_URL,
     process.env.REACT_APP_SUPABASE_PROJECT_KEY
@@ -11,8 +10,7 @@ const supabase = createClient(
 function Login() {
     const navigate = useNavigate();
     supabase.auth.onAuthStateChange(async (event) =>{
-        console.log('Auth state changed:', event);
-        if (event === "SIGNED OUT") {
+        if (event === "SIGNED_IN") {
             navigate("/success");
         } else {
             navigate("/");

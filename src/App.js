@@ -6,9 +6,7 @@ import Success from "./pages/successPage";
 
 
 function App() {
-  console.log(process.env.REACT_APP_SUPABASE_CLIENT_URL);
-
-  return (
+    return (
       <Router>
         <Routes>
           <Route path="/" element={<Login/>} />
