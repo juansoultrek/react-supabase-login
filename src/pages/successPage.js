@@ -25,12 +25,19 @@ function Success() {
         getUserData();
     }, []);
 
+    async function signOutUser() {
+        const {error} = await supabase.auth.signOut();
+        navigate("/");
+    }
+
 
 
     return (
         <div className="App">
             <header className="App-header">
-                Success
+                <h1>Success</h1>
+                <button onClick={ () =>signOutUser()}>Sign Out
+                </button>
             </header>
         </div>
     );
