@@ -12,6 +12,7 @@ function Success() {
     const [user, setUser] = useState({});
     const navigate = useNavigate();
 
+
     useEffect( () => {
         async function getUserData(){
             await supabase.auth.getUser().then((value) => {
@@ -20,6 +21,12 @@ function Success() {
                     setUser(value.data.user);
                 }
 
+
+            })
+
+            await supabase.auth.getSession().then((value) => {
+
+                    console.log(value.data.session.expires_in)
             })
         }
         getUserData();

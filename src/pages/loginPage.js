@@ -8,14 +8,15 @@ const supabase = createClient(
     process.env.REACT_APP_SUPABASE_PROJECT_KEY
 )
 function Login() {
-    const navigate = useNavigate();
-    supabase.auth.onAuthStateChange(async (event) =>{
-        if (event === "SIGNED_IN") {
-            navigate("/success");
-        } else {
-            navigate("/");
-        }
-    })
+   // const navigate = useNavigate();
+  //  supabase.auth.onAuthStateChange(async (event) =>{
+       // if (event === "SIGNED_IN") {
+      //      navigate("/success");
+     //   } else {
+     //       navigate("/");
+     //   }
+   // })
+cd
     return (
         <div className="App">
             <header className="App-header">
